@@ -1,5 +1,3 @@
-import { DungeonName, dungeons, Item, Specialization, WowClass } from "./data";
-
 function canUseItem(whichClass: WowClass, whichSpec: Specialization, item: Item): boolean {
     switch (item.slot) {
         case "neck":
@@ -37,3 +35,5 @@ function getDungeonLootTable(name: DungeonName): Item[] {
         .bosses.map((boss) => boss.loot)
         .flat();
 }
+
+console.log("hi");

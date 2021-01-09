@@ -1,5 +1,5 @@
-export type ArmorType = "cloth" | "leather" | "mail" | "plate";
-export type WeaponType =
+type ArmorType = "cloth" | "leather" | "mail" | "plate";
+type WeaponType =
     | "staff"
     | "two-handed sword"
     | "one-handed sword"
@@ -16,63 +16,88 @@ export type WeaponType =
     | "shield"
     | "ranged";
 
-export type PrimaryStat = "intellect" | "agility" | "strength";
-export type SecondaryStat = "Haste" | "Versatility" | "Mastery" | "Critical Strike";
+type PrimaryStat = "intellect" | "agility" | "strength";
+type SecondaryStat = "Haste" | "Versatility" | "Mastery" | "Critical Strike";
 
-export type ArmorSlot = "head" | "shoulder" | "chest" | "wrist" | "hands" | "waist" | "legs" | "feet";
-export type WeaponSlot = "one hand" | "off hand" | "both hands";
-export type JewelrySlot = "neck" | "finger";
-export type Slot = ArmorSlot | WeaponSlot | JewelrySlot | "back" | "trinket";
+type ArmorSlot = "head" | "shoulder" | "chest" | "wrist" | "hands" | "waist" | "legs" | "feet";
+type WeaponSlot = "one hand" | "off hand" | "both hands";
+type JewelrySlot = "neck" | "finger";
+type Slot = ArmorSlot | WeaponSlot | JewelrySlot | "back" | "trinket";
 
-export type Role = "tank" | "dps" | "healer";
+type Role = "tank" | "dps" | "healer";
 
-export interface BaseItem {
+interface BaseItem {
     name: string;
     slot: Slot;
 }
 
-export interface ArmorItem extends BaseItem {
+interface ArmorItem extends BaseItem {
     slot: ArmorSlot;
     type: ArmorType;
     mainSecondaryStat: SecondaryStat;
     otherSecondaryStat: SecondaryStat;
 }
-export interface WeaponItem extends BaseItem {
+interface WeaponItem extends BaseItem {
     slot: WeaponSlot;
     type: WeaponType;
     primaryStat: PrimaryStat[];
     mainSecondaryStat: SecondaryStat;
     otherSecondaryStat: SecondaryStat;
 }
-export interface JewelryItem extends BaseItem {
+interface JewelryItem extends BaseItem {
     slot: JewelrySlot;
     mainSecondaryStat: SecondaryStat;
     otherSecondaryStat: SecondaryStat;
 }
-export interface CloakItem extends BaseItem {
+interface CloakItem extends BaseItem {
     slot: "back";
     mainSecondaryStat: SecondaryStat;
     otherSecondaryStat: SecondaryStat;
 }
-export interface TrinketItem extends BaseItem {
+interface TrinketItem extends BaseItem {
     slot: "trinket";
     stat: PrimaryStat[] | SecondaryStat;
-    effectSuitableFor: Role[]|PrimaryStat|"all";
+    effectSuitableFor: Role[] | PrimaryStat | "all";
 }
-export type Item = ArmorItem | WeaponItem | JewelryItem | CloakItem | TrinketItem;
+type Item = ArmorItem | WeaponItem | JewelryItem | CloakItem | TrinketItem;
 
-export interface Boss {
+interface ArmorItemWithIlvl extends ArmorItem {
+    ilvl: number;
+}
+interface WeaponItemWithIlvl extends WeaponItem {
+    ilvl: number;
+}
+interface JewelryItemWithIlvl extends JewelryItem {
+    ilvl: number;
+}
+interface CloakItemWithIlvl extends CloakItem {
+    ilvl: number;
+}
+interface TrinketItemWithIlvl extends TrinketItem {
+    ilvl: number;
+}
+type ItemWithIlvl = ArmorItemWithIlvl | WeaponItemWithIlvl | JewelryItemWithIlvl | CloakItemWithIlvl | TrinketItemWithIlvl;
+
+interface Boss {
     name: string;
     loot: Item[];
 }
 
-export type DungeonName = "De Other Side" | "Halls of Atonement" | "Mists of Tirna Scithe" | "Plaguefall" | "Sanguine Depths" | "Spires of Ascension" | "The Necrotic Wake" | "Theater of Pain";
-export interface Dungeon {
+type DungeonName =
+    | "De Other Side"
+    | "Halls of Atonement"
+    | "Mists of Tirna Scithe"
+    | "Plaguefall"
+    | "Sanguine Depths"
+    | "Spires of Ascension"
+    | "The Necrotic Wake"
+    | "Theater of Pain";
+interface Dungeon {
     name: DungeonName;
     bosses: Boss[];
 }
 
-export const dungeons: Dungeon[] = [
+const dungeons: Dungeon[] = [
     {
         name: "De Other Side",
         bosses: [
@@ -335,7 +360,7 @@ export const dungeons: Dungeon[] = [
                         slot: "feet",
                         type: "mail",
                         mainSecondaryStat: "Mastery",
-                        otherSecondaryStat: "Critical Strike"
+                        otherSecondaryStat: "Critical Strike",
                     },
                 ],
             },
@@ -395,7 +420,7 @@ export const dungeons: Dungeon[] = [
                         type: "off-hand",
                         primaryStat: ["intellect"],
                         mainSecondaryStat: "Versatility",
-                        otherSecondaryStat: "Critical Strike"
+                        otherSecondaryStat: "Critical Strike",
                     },
                     {
                         name: "Mantle of Ephemeral Visages",
@@ -416,7 +441,7 @@ export const dungeons: Dungeon[] = [
                         slot: "hands",
                         type: "leather",
                         mainSecondaryStat: "Versatility",
-                        otherSecondaryStat: "Haste"
+                        otherSecondaryStat: "Haste",
                     },
                     {
                         name: "Cord of the Dark Word",
@@ -502,7 +527,7 @@ export const dungeons: Dungeon[] = [
                         type: "one-handed mace",
                         primaryStat: ["intellect"],
                         mainSecondaryStat: "Mastery",
-                        otherSecondaryStat: "Critical Strike"
+                        otherSecondaryStat: "Critical Strike",
                     },
                     {
                         name: "Soulthorn Visage",
@@ -523,7 +548,7 @@ export const dungeons: Dungeon[] = [
                         slot: "shoulder",
                         type: "cloth",
                         mainSecondaryStat: "Critical Strike",
-                        otherSecondaryStat: "Versatility"
+                        otherSecondaryStat: "Versatility",
                     },
                     {
                         name: "Rainshadow Hauberk",
@@ -537,7 +562,7 @@ export const dungeons: Dungeon[] = [
                         slot: "wrist",
                         type: "cloth",
                         mainSecondaryStat: "Haste",
-                        otherSecondaryStat: "Versatility"
+                        otherSecondaryStat: "Versatility",
                     },
                     {
                         name: "Clasp of Waning Shadow",
@@ -550,8 +575,8 @@ export const dungeons: Dungeon[] = [
                         name: "Unbound Changeling",
                         slot: "trinket",
                         stat: ["intellect"],
-                        effectSuitableFor: "all"
-                    }
+                        effectSuitableFor: "all",
+                    },
                 ],
             },
             {
@@ -611,7 +636,7 @@ export const dungeons: Dungeon[] = [
                         slot: "trinket",
                         stat: ["agility"],
                         effectSuitableFor: "all",
-                    }
+                    },
                 ],
             },
             {
@@ -631,7 +656,7 @@ export const dungeons: Dungeon[] = [
                         type: "one-handed axe",
                         primaryStat: ["strength"],
                         mainSecondaryStat: "Versatility",
-                        otherSecondaryStat: "Haste"
+                        otherSecondaryStat: "Haste",
                     },
                     {
                         name: "Acidslough Bulwark",
@@ -680,756 +705,760 @@ export const dungeons: Dungeon[] = [
             },
         ],
     },
-    {
-        name: "Plaguefall",
-        bosses: [
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        name: "Sanguine Depths",
-        bosses: [
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        name: "Spires of Ascension",
-        bosses: [
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        name: "The Necrotic Wake",
-        bosses: [
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        name: "Theater of Pain",
-        bosses: [
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-            {
-                name: "",
-                loot: [
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                    {
-                        name: "",
-                        slot: 
-                    },
-                ],
-            },
-        ],
-    },
+    // {
+    //     name: "Plaguefall",
+    //     bosses: [
+    //         {
+    //             name: "Globgrog",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             name: "Doctor Ickus",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             name: "Domina Venomblade",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             name: "Margrave Stradama",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //     ],
+    // },
+    // {
+    //     name: "Sanguine Depths",
+    //     bosses: [
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //     ],
+    // },
+    // {
+    //     name: "Spires of Ascension",
+    //     bosses: [
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //     ],
+    // },
+    // {
+    //     name: "The Necrotic Wake",
+    //     bosses: [
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //     ],
+    // },
+    // {
+    //     name: "Theater of Pain",
+    //     bosses: [
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             name: "",
+    //             loot: [
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //                 {
+    //                     name: "",
+    //                     slot:
+    //                 },
+    //             ],
+    //         },
+    //     ],
+    // },
 ];
 
-export interface Specialization {
-    primaryStat: PrimaryStat,
-    usableWeapons: WeaponType[],
-    weaponSlots: WeaponSlot[][],
-    role: Role,
+interface Specialization {
+    primaryStat: PrimaryStat;
+    usableWeapons: WeaponType[];
+    weaponSlots: WeaponSlot[][];
+    role: Role;
 }
-export interface WowClass {
-    usableArmor: ArmorType,
-    specializations: Record<string, Specialization>,
+interface WowClass {
+    usableArmor: ArmorType;
+    specializations: Record<string, Specialization>;
 }
 
-export const classes: Record<string, WowClass> = {
-    "warrior": {
+const classes: Record<string, WowClass> = {
+    warrior: {
         usableArmor: "plate",
         specializations: {
-            "fury": {
+            fury: {
                 primaryStat: "strength",
                 usableWeapons: ["two-handed axe", "two-handed mace", "two-handed sword", "polearm"],
                 role: "dps",
-                weaponSlots: [["one hand", "one hand"], ["both hands", "one hand"], ["both hands", "both hands"]]
+                weaponSlots: [
+                    ["one hand", "one hand"],
+                    ["both hands", "one hand"],
+                    ["both hands", "both hands"],
+                ],
             },
-            "arms": {
+            arms: {
                 primaryStat: "strength",
                 usableWeapons: ["two-handed axe", "two-handed mace", "two-handed sword", "polearm"],
                 role: "dps",
-                weaponSlots: [["both hands"]]
+                weaponSlots: [["both hands"]],
             },
-            "protection": {
+            protection: {
                 primaryStat: "strength",
                 usableWeapons: ["one-handed axe", "one-handed mace", "one-handed sword", "shield"],
                 role: "tank",
-                weaponSlots: [["one hand", "off hand"]]
-            }
-        }
+                weaponSlots: [["one hand", "off hand"]],
+            },
+        },
     },
-    "paladin": {
+    paladin: {
         usableArmor: "plate",
         specializations: {
-            "holy": {
+            holy: {
                 primaryStat: "intellect",
                 usableWeapons: ["one-handed axe", "one-handed mace", "one-handed sword", "shield"],
                 role: "healer",
                 weaponSlots: [["one hand", "off hand"]],
             },
-            "protection": {
+            protection: {
                 primaryStat: "strength",
                 usableWeapons: ["one-handed axe", "one-handed mace", "one-handed sword", "shield"],
                 role: "tank",
                 weaponSlots: [["one hand", "off hand"]],
             },
-            "retribution": {
+            retribution: {
                 primaryStat: "strength",
                 usableWeapons: ["two-handed axe", "two-handed mace", "two-handed sword"],
                 role: "dps",
                 weaponSlots: [["both hands"]],
-            }
-        }
+            },
+        },
     },
-    "hunter": {
+    hunter: {
         usableArmor: "mail",
         specializations: {
-            "marksmanship": {
+            marksmanship: {
                 primaryStat: "agility",
                 usableWeapons: ["ranged"],
                 role: "dps",
@@ -1441,219 +1470,219 @@ export const classes: Record<string, WowClass> = {
                 role: "dps",
                 weaponSlots: [["both hands"]],
             },
-            "survival": {
+            survival: {
                 primaryStat: "agility",
                 usableWeapons: ["polearm"],
                 role: "dps",
                 weaponSlots: [["both hands"]],
             },
-        }
+        },
     },
-    "rogue": {
+    rogue: {
         usableArmor: "leather",
         specializations: {
-            "sublety": {
+            sublety: {
                 primaryStat: "agility",
                 usableWeapons: ["dagger"],
                 role: "dps",
                 weaponSlots: [["one hand", "one hand"]],
             },
-            "assassination": {
+            assassination: {
                 primaryStat: "agility",
                 usableWeapons: ["dagger"],
                 role: "dps",
                 weaponSlots: [["one hand", "one hand"]],
             },
-            "outlaw": {
+            outlaw: {
                 primaryStat: "agility",
                 usableWeapons: ["one-handed sword", "one-handed axe", "one-handed mace"],
                 role: "dps",
                 weaponSlots: [["one hand", "one hand"]],
             },
-        }
+        },
     },
-    "priest": {
+    priest: {
         usableArmor: "cloth",
         specializations: {
-            "holy": {
+            holy: {
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed mace", "staff", "wand", "off-hand"],
                 role: "healer",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            "discipline": {
+            discipline: {
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed mace", "staff", "wand", "off-hand"],
                 role: "healer",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            "shadow": {
+            shadow: {
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed mace", "staff", "wand", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-        }
+        },
     },
-    "shaman": {
+    shaman: {
         usableArmor: "mail",
         specializations: {
-            "restoration": {
+            restoration: {
                 primaryStat: "intellect",
                 usableWeapons: ["fist weapon", "one-handed axe", "one-handed mace", "shield", "staff"],
                 role: "healer",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            "enhancement": {
+            enhancement: {
                 primaryStat: "agility",
                 usableWeapons: ["fist weapon", "one-handed axe", "one-handed mace"],
                 role: "dps",
                 weaponSlots: [["one hand", "one hand"]],
             },
-            "elemental": {
+            elemental: {
                 primaryStat: "intellect",
                 usableWeapons: ["fist weapon", "one-handed axe", "one-handed mace", "shield", "staff"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-        }
+        },
     },
-    "mage": {
+    mage: {
         usableArmor: "cloth",
         specializations: {
-            "fire": {
+            fire: {
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed sword", "staff", "wand", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            "frost": {
+            frost: {
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed sword", "staff", "wand", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            "arcane": {
+            arcane: {
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed sword", "staff", "wand", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-        }
+        },
     },
-    "warlock": {
+    warlock: {
         usableArmor: "cloth",
         specializations: {
-            "affliction": {
+            affliction: {
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed sword", "staff", "wand", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            "destruction": {
+            destruction: {
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed sword", "staff", "wand", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            "demonology": {
+            demonology: {
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed sword", "staff", "wand", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-        }
+        },
     },
-    "monk": {
+    monk: {
         usableArmor: "leather",
         specializations: {
-            "brewmaster": {
+            brewmaster: {
                 primaryStat: "agility",
                 usableWeapons: ["fist weapon", "one-handed axe", "one-handed mace", "one-handed sword", "polearm", "staff"],
                 role: "tank",
                 weaponSlots: [["one hand", "one hand"], ["both hands"]],
             },
-            "windwalker": {
+            windwalker: {
                 primaryStat: "agility",
                 usableWeapons: ["fist weapon", "one-handed axe", "one-handed mace", "one-handed sword", "polearm", "staff"],
                 role: "dps",
                 weaponSlots: [["one hand", "one hand"], ["both hands"]],
             },
-            "mistweaver": {
+            mistweaver: {
                 primaryStat: "intellect",
                 usableWeapons: ["fist weapon", "one-handed axe", "one-handed mace", "one-handed sword", "polearm", "staff"],
                 role: "healer",
                 weaponSlots: [["one hand", "one hand"], ["both hands"]],
             },
-        }
+        },
     },
-    "druid": {
+    druid: {
         usableArmor: "leather",
         specializations: {
-            "restoration": {
+            restoration: {
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "fist weapon", "one-handed mace", "two-handed mace", "staff", "off-hand"],
                 role: "healer",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            "guardian": {
+            guardian: {
                 primaryStat: "agility",
                 usableWeapons: ["dagger", "fist weapon", "one-handed mace", "two-handed mace", "staff", "off-hand"],
                 role: "tank",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            "feral": {
+            feral: {
                 primaryStat: "agility",
                 usableWeapons: ["dagger", "fist weapon", "one-handed mace", "two-handed mace", "staff", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            "balance": {
+            balance: {
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "fist weapon", "one-handed mace", "two-handed mace", "staff", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-        }
+        },
     },
     "demon hunter": {
         usableArmor: "leather",
         specializations: {
-            "havoc": {
+            havoc: {
                 primaryStat: "agility",
                 usableWeapons: ["warglaive", "fist weapon", "one-handed axe", "one-handed sword"],
                 role: "dps",
                 weaponSlots: [["one hand", "one hand"]],
             },
-            "vengeance": {
+            vengeance: {
                 primaryStat: "agility",
                 usableWeapons: ["warglaive", "fist weapon", "one-handed axe", "one-handed sword"],
                 role: "tank",
                 weaponSlots: [["one hand", "one hand"]],
             },
-        }
+        },
     },
     "death knight": {
         usableArmor: "plate",
         specializations: {
-            "blood": {
+            blood: {
                 primaryStat: "strength",
                 usableWeapons: ["polearm", "two-handed axe", "two-handed mace", "two-handed sword"],
                 role: "tank",
                 weaponSlots: [["both hands"]],
             },
-            "unholy": {
+            unholy: {
                 primaryStat: "strength",
                 usableWeapons: ["polearm", "two-handed axe", "two-handed mace", "two-handed sword"],
                 role: "dps",
                 weaponSlots: [["both hands"]],
             },
-            "frost": {
+            frost: {
                 primaryStat: "strength",
                 usableWeapons: ["one-handed axe", "one-handed mace", "one-handed sword", "polearm", "two-handed axe", "two-handed mace", "two-handed sword"],
                 role: "dps",
                 weaponSlots: [["one hand", "one hand"], ["both hands"]],
             },
-        }
+        },
     },
-}
+};

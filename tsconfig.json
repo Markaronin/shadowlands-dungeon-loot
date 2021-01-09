@@ -2,7 +2,8 @@
     "compilerOptions": {
         "strict": true,
         "outDir": "build",
-        "lib": ["ESNext"]
+        "lib": ["ESNext", "DOM"],
+        "target": "ESNext"
     },
     "include": ["./src/*.ts"]
 }
