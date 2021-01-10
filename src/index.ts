@@ -65,7 +65,33 @@ function render() {
                             case "off hand":
                             case "one hand":
                             case "both hands":
-                                return 0;
+                                const currentIlvl = character.items.weapon.reduce((prev, curr) => prev + curr.ilvl, 0);
+                                const possibleIlvlUpgrades = character.spec.weaponSlots
+                                    .filter((combination) => combination.includes(item.slot))
+                                    .map((combination) => {
+                                        const newWeaponCombination: number[] = [];
+                                        const usedWeaponYet = false;
+                                        combination.forEach((slot, index) => {
+                                            if (!usedWeaponYet && slot === item.slot) {
+                                                newWeaponCombination[index] = newItemIlvl;
+                                            } else {
+                                                // Need to use an item from current loadout
+                                                const possibleWeaponsToUse = character.items.weapon
+                                                    .filter((weapon) => weapon.slot === slot)
+                                                    .map((weapon) => weapon.ilvl);
+                                                if (possibleWeaponsToUse.length > 0) {
+                                                    newWeaponCombination[index] = Math.max(...possibleWeaponsToUse);
+                                                } else {
+                                                    newWeaponCombination[index] = -1;
+                                                }
+                                            }
+                                        });
+                                        return newWeaponCombination.includes(-1)
+                                            ? 0
+                                            : newWeaponCombination.reduce((prev, curr) => prev + curr, 0) * (2 / newWeaponCombination.length);
+                                    });
+                                possibleIlvlUpgrades.sort((a, b) => b - a);
+                                return Math.max(0, possibleIlvlUpgrades[0] - currentIlvl);
                             default:
                                 return Math.max(0, newItemIlvl - character.items[item.slot].ilvl);
                         }

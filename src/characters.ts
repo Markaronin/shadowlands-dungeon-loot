@@ -67,12 +67,12 @@ class Character {
             case "one hand":
             case "off hand":
             case "both hands":
-                return item.primaryStat.indexOf(this.spec.primaryStat) !== -1 && this.spec.usableWeapons.indexOf(item.type) !== -1;
+                return item.primaryStat.includes(this.spec.primaryStat) && this.spec.usableWeapons.includes(item.type);
             case "trinket":
                 return (
-                    (typeof item.stat !== "object" || item.stat.indexOf(this.spec.primaryStat) !== -1) &&
+                    (typeof item.stat !== "object" || item.stat.includes(this.spec.primaryStat)) &&
                     (item.effectSuitableFor === "all" ||
-                        (typeof item.effectSuitableFor === "object" && item.effectSuitableFor.indexOf(this.spec.role) !== -1) ||
+                        (typeof item.effectSuitableFor === "object" && item.effectSuitableFor.includes(this.spec.role)) ||
                         item.effectSuitableFor === this.spec.primaryStat)
                 );
             default:
@@ -347,4 +347,4 @@ const kaas = new Character("Kaas", "demon hunter", "vengeance", {
     ],
 });
 
-const characters = [anixa, kaas];
+const characters = [anixa];

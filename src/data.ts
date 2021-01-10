@@ -912,563 +912,899 @@ const dungeons: Dungeon[] = [
             },
         ],
     },
-    // {
-    //     name: "Sanguine Depths",
-    //     bosses: [
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //     ],
-    // },
-    // {
-    //     name: "Spires of Ascension",
-    //     bosses: [
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //     ],
-    // },
-    // {
-    //     name: "The Necrotic Wake",
-    //     bosses: [
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //     ],
-    // },
-    // {
-    //     name: "Theater of Pain",
-    //     bosses: [
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             name: "",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //     ],
-    // },
+    {
+        name: "Sanguine Depths",
+        bosses: [
+            {
+                name: "Kryxis the Voracious",
+                loot: [
+                    {
+                        name: "Hungering Devourer's Twinblade",
+                        slot: "one hand",
+                        type: "warglaive",
+                        primaryStat: ["agility"],
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Voracious Gorger Spine",
+                        slot: "one hand",
+                        type: "dagger",
+                        primaryStat: ["agility"],
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Anima-Splattered Hide",
+                        slot: "chest",
+                        type: "leather",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Essence Surge Binders",
+                        slot: "wrist",
+                        type: "cloth",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Shackles of Alluring Vitality",
+                        slot: "wrist",
+                        type: "mail",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Sabatons of the Rushing Juggernaut",
+                        slot: "feet",
+                        type: "plate",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Entwined Gorger Tendril",
+                        slot: "finger",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Versatility",
+                    },
+                ],
+            },
+            {
+                name: "Executor Tarvold",
+                loot: [
+                    {
+                        name: "Sinsmasher",
+                        slot: "one hand",
+                        type: "one-handed mace",
+                        primaryStat: ["strength"],
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Castigator's Mantle",
+                        slot: "shoulder",
+                        type: "cloth",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Cloak of Enveloping Manifestations",
+                        slot: "back",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Vambraces of the Depraved Warden",
+                        slot: "wrist",
+                        type: "plate",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Executor's Prideful Girdle",
+                        slot: "waist",
+                        type: "mail",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Sinsoaked Waders",
+                        slot: "feet",
+                        type: "leather",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Overflowing Anima Cage",
+                        slot: "trinket",
+                        stat: ["intellect"],
+                        effectSuitableFor: "all",
+                    },
+                ],
+            },
+            {
+                name: "Grand Proctor Beryllia",
+                loot: [
+                    {
+                        name: "Vessel of Shining Radiance",
+                        slot: "off hand",
+                        type: "off-hand",
+                        primaryStat: ["intellect"],
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Radiant Light Binders",
+                        slot: "wrist",
+                        type: "leather",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Iron Spiked Handgrips",
+                        slot: "hands",
+                        type: "mail",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Waistguard of Expurged Anguish",
+                        slot: "waist",
+                        type: "plate",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Beryllia's Leggings of Endless Torment",
+                        slot: "legs",
+                        type: "cloth",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Lingering Sunmote",
+                        slot: "trinket",
+                        stat: ["intellect"],
+                        effectSuitableFor: ["healer"],
+                    },
+                ],
+            },
+            {
+                name: "General Kaal",
+                loot: [
+                    {
+                        name: "Kaal's Gloomblade",
+                        slot: "one hand",
+                        type: "one-handed sword",
+                        primaryStat: ["intellect"],
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Stone General's Edge",
+                        slot: "one hand",
+                        type: "one-handed axe",
+                        primaryStat: ["agility"],
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Cowl of the Devoted General",
+                        slot: "head",
+                        type: "cloth",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Wicked Bladewing Pauldrons",
+                        slot: "shoulder",
+                        type: "leather",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Guilewind Stone Talons",
+                        slot: "hands",
+                        type: "plate",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Wind Dancer's Legguards",
+                        slot: "legs",
+                        type: "mail",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Bladedancer's Armor Kit",
+                        slot: "trinket",
+                        stat: ["agility", "strength"],
+                        effectSuitableFor: ["tank"],
+                    },
+                    {
+                        name: "Decanter of Anima-Charged Winds",
+                        slot: "trinket",
+                        stat: ["agility", "strength"],
+                        effectSuitableFor: ["dps", "tank"],
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        name: "Spires of Ascension",
+        bosses: [
+            {
+                name: "Kin-Tara",
+                loot: [
+                    {
+                        name: "Quarterstaff of Discordant Ethic",
+                        slot: "both hands",
+                        type: "staff",
+                        primaryStat: ["agility"],
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Azure-Venom Choker",
+                        slot: "neck",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Forsworn Stalker's Hauberk",
+                        slot: "chest",
+                        type: "mail",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Winged Hunters' Gloves",
+                        slot: "hands",
+                        type: "leather",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Kin-Tara's Baleful Cord",
+                        slot: "waist",
+                        type: "cloth",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Warboots of Ruthless Conviction",
+                        slot: "feet",
+                        type: "plate",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                ],
+            },
+            {
+                name: "Ventunax",
+                loot: [
+                    {
+                        name: "Penitent Edge",
+                        slot: "one hand",
+                        type: "one-handed axe",
+                        primaryStat: ["agility"],
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Distorted Construct's Gauntlets",
+                        slot: "hands",
+                        type: "plate",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Dark Praetorian's Clasp",
+                        slot: "waist",
+                        type: "mail",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Shadowhirl Waistwrap",
+                        slot: "waist",
+                        type: "leather",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Dark Stride Footwraps",
+                        slot: "feet",
+                        type: "cloth",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Overcharged Anima Battery",
+                        slot: "trinket",
+                        stat: ["agility"],
+                        effectSuitableFor: "all",
+                    },
+                ],
+            },
+            {
+                name: "Oryphrion",
+                loot: [
+                    {
+                        name: "The Philosopher",
+                        slot: "both hands",
+                        type: "ranged",
+                        primaryStat: ["agility"],
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Vicious Surge Faceguard",
+                        slot: "head",
+                        type: "leather",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Thunderous Echo Vambraces",
+                        slot: "wrist",
+                        type: "plate",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Absonant Construct's Handguards",
+                        slot: "hands",
+                        type: "mail",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Purge Protocol Legwraps",
+                        slot: "legs",
+                        type: "cloth",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Anima Field Emitter",
+                        slot: "trinket",
+                        stat: ["strength"],
+                        effectSuitableFor: "all",
+                    },
+                    {
+                        name: "Empyreal Ordnance",
+                        slot: "trinket",
+                        stat: "Mastery",
+                        effectSuitableFor: "intellect",
+                    },
+                ],
+            },
+            {
+                name: "Devos, Paragon of Doubt",
+                loot: [
+                    {
+                        name: "Devos's Cacophonous Poleaxe",
+                        slot: "both hands",
+                        type: "polearm",
+                        primaryStat: ["agility"],
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Drape of Twisted Loyalties",
+                        slot: "back",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Breastplate of Brutal Dissonance",
+                        slot: "chest",
+                        type: "plate",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Sinister Requiem Vestments",
+                        slot: "chest",
+                        type: "cloth",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Fallen Paragon's Armguards",
+                        slot: "wrist",
+                        type: "mail",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Abyssal Disharmony Breeches",
+                        slot: "legs",
+                        type: "leather",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Boon of the Archon",
+                        slot: "trinket",
+                        stat: ["intellect"],
+                        effectSuitableFor: ["healer"],
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        name: "The Necrotic Wake",
+        bosses: [
+            {
+                name: "Blightbone",
+                loot: [
+                    {
+                        name: "Engorged Worm Smasher",
+                        slot: "one hand",
+                        type: "one-handed mace",
+                        primaryStat: ["strength"],
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Blight Belcher",
+                        slot: "both hands",
+                        type: "ranged",
+                        primaryStat: ["agility"],
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Abominable Visage",
+                        slot: "head",
+                        type: "cloth",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Blightbone Spaulders",
+                        slot: "shoulder",
+                        type: "mail",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Fused Bone Greatbelt",
+                        slot: "waist",
+                        type: "plate",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: " Viscera-Stitched Footpads",
+                        slot: "feet",
+                        type: "leather",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Stitchflesh's Misplaced Signet",
+                        slot: "finger",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Versatility",
+                    },
+                ],
+            },
+            {
+                name: "Amarth, The Harvester",
+                loot: [
+                    {
+                        name: "Amarth's Spellblade",
+                        slot: "one hand",
+                        type: "one-handed sword",
+                        primaryStat: ["intellect"],
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Rattling Deadeye Hood",
+                        slot: "head",
+                        type: "mail",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Reanimator's Mantle",
+                        slot: "shoulder",
+                        type: "cloth",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Risen Monstrosity Cuffs",
+                        slot: "wrist",
+                        type: "leather",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Legplates of Unholy Frenzy",
+                        slot: "legs",
+                        type: "plate",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Bottled Flayedwing Toxin",
+                        slot: "trinket",
+                        stat: ["agility"],
+                        effectSuitableFor: ["dps"],
+                    },
+                ],
+            },
+            {
+                name: "Surgeon Stitchflesh",
+                loot: [
+                    {
+                        name: "Stitchflesh's Scalpel",
+                        slot: "one hand",
+                        type: "dagger",
+                        primaryStat: ["agility"],
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Encrusted Canopic Lid",
+                        slot: "off hand",
+                        type: "shield",
+                        primaryStat: ["intellect", "strength"],
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Vile Butcher's Pauldrons",
+                        slot: "shoulder",
+                        type: "plate",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Freshly Embalmed Jerkin",
+                        slot: "chest",
+                        type: "leather",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Gory Surgeon's Gloves",
+                        slot: "hands",
+                        type: "cloth",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Striders of Restless Malice",
+                        slot: "feet",
+                        type: "mail",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Satchel of Misbegotten Minions",
+                        slot: "trinket",
+                        stat: ["intellect"],
+                        effectSuitableFor: ["dps"],
+                    },
+                    {
+                        name: "Spare Meat Hook",
+                        slot: "trinket",
+                        stat: ["strength"],
+                        effectSuitableFor: ["dps"],
+                    },
+                ],
+            },
+            {
+                name: "Nalthor the Rimebinder",
+                loot: [
+                    {
+                        name: "Rimebinder's Runeblade",
+                        slot: "both hands",
+                        type: "two-handed sword",
+                        primaryStat: ["strength"],
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Darkfrost Helmet",
+                        slot: "head",
+                        type: "plate",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Undying Chill Shoulderpads",
+                        slot: "shoulder",
+                        type: "leather",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Necropolis Lord's Shackles",
+                        slot: "wrist",
+                        type: "cloth",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Lichbone Legguards",
+                        slot: "legs",
+                        type: "mail",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Ritual Commander's Ring",
+                        slot: "finger",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Siphoning Phylactery Shard",
+                        slot: "trinket",
+                        stat: ["intellect"],
+                        effectSuitableFor: ["healer"],
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        name: "Theater of Pain",
+        bosses: [
+            {
+                name: "An Affront of Challengers",
+                loot: [
+                    {
+                        name: "Dessia's Decimating Decapitator",
+                        slot: "both hands",
+                        type: "two-handed axe",
+                        primaryStat: ["strength"],
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Amphitheater Stalker's Hood",
+                        slot: "head",
+                        type: "mail",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Plague-Licked Amice",
+                        slot: "shoulder",
+                        type: "cloth",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Vest of Concealed Secrets",
+                        slot: "chest",
+                        type: "leather",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Galvanized Oxxein Legguards",
+                        slot: "legs",
+                        type: "plate",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Bloodoath Signet",
+                        slot: "finger",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Vial of Spectral Essence",
+                        slot: "trinket",
+                        stat: ["intellect"],
+                        effectSuitableFor: ["healer"],
+                    },
+                ],
+            },
+            {
+                name: "Gorechop",
+                loot: [
+                    {
+                        name: "Abdominal Securing Chestguard",
+                        slot: "chest",
+                        type: "plate",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Contaminated Gauze Wristwraps",
+                        slot: "wrist",
+                        type: "cloth",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Grips of Overwhelming Beatings",
+                        slot: "hands",
+                        type: "mail",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Fleshfused Circle",
+                        slot: "finger",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Viscera of Coalesced Hatred",
+                        slot: "trinket",
+                        stat: ["strength"],
+                        effectSuitableFor: ["tank"],
+                    },
+                ],
+            },
+            {
+                name: "Xav the Unfallen",
+                loot: [
+                    {
+                        name: "Xav's Pike of Authority",
+                        slot: "both hands",
+                        type: "polearm",
+                        primaryStat: ["agility"],
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Fleshcrafter's Knife",
+                        slot: "one hand",
+                        type: "dagger",
+                        primaryStat: ["intellect"],
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Gorebound Predator's Gavel",
+                        slot: "one hand",
+                        type: "one-handed mace",
+                        primaryStat: ["agility"],
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Gorestained Cleaver",
+                        slot: "one hand",
+                        type: "one-handed axe",
+                        primaryStat: ["strength"],
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Triumphant Combatant's Chainmail",
+                        slot: "chest",
+                        type: "mail",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Pit Fighter's Wristguards",
+                        slot: "wrist",
+                        type: "plate",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Fearless Challenger's Leggings",
+                        slot: "legs",
+                        type: "leather",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Mastery",
+                    },
+                ],
+            },
+            {
+                name: "Kul'tharok",
+                loot: [
+                    {
+                        name: "Soulswen Vestments",
+                        slot: "chest",
+                        type: "cloth",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Girdle of Shattered Dreams",
+                        slot: "waist",
+                        type: "leather",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Boots of Shuddering Matter",
+                        slot: "feet",
+                        type: "mail",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Ritual Bone Band",
+                        slot: "finger",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Soulletting Ruby",
+                        slot: "trinket",
+                        stat: ["intellect"],
+                        effectSuitableFor: "all",
+                    },
+                ],
+            },
+            {
+                name: "Mordretha, the Endless Empress",
+                loot: [
+                    {
+                        name: "Barricade of the Endless Empire",
+                        slot: "off hand",
+                        type: "shield",
+                        primaryStat: ["intellect", "strength"],
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Deathwalker's Promise",
+                        slot: "off hand",
+                        type: "off-hand",
+                        primaryStat: ["intellect"],
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Unyielding Combatant's Pauldrons",
+                        slot: "shoulder",
+                        type: "plate",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Fallen Empress's Cord",
+                        slot: "waist",
+                        type: "cloth",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Vanquished Usurper's Footpads",
+                        slot: "feet",
+                        type: "leather",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Ring of Perpetual Conflict",
+                        slot: "finger",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Grim Codex",
+                        slot: "trinket",
+                        stat: ["agility", "strength"],
+                        effectSuitableFor: ["dps", "tank"],
+                    },
+                ],
+            },
+        ],
+    },
 ];
 
 interface Specialization {
