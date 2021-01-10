@@ -1394,21 +1394,26 @@ const dungeons: Dungeon[] = [
 ];
 
 interface Specialization {
+    name: string;
     primaryStat: PrimaryStat;
     usableWeapons: WeaponType[];
     weaponSlots: WeaponSlot[][];
     role: Role;
 }
+type WowClassName = "warrior" | "paladin" | "hunter" | "rogue" | "priest" | "shaman" | "mage" | "warlock" | "monk" | "druid" | "demon hunter" | "death knight";
 interface WowClass {
+    name: WowClassName;
     usableArmor: ArmorType;
-    specializations: Record<string, Specialization>;
+    specializations: Specialization[];
 }
 
-const classes: Record<string, WowClass> = {
-    warrior: {
+const classes: WowClass[] = [
+    {
+        name: "warrior",
         usableArmor: "plate",
-        specializations: {
-            fury: {
+        specializations: [
+            {
+                name: "fury",
                 primaryStat: "strength",
                 usableWeapons: ["two-handed axe", "two-handed mace", "two-handed sword", "polearm"],
                 role: "dps",
@@ -1418,271 +1423,317 @@ const classes: Record<string, WowClass> = {
                     ["both hands", "both hands"],
                 ],
             },
-            arms: {
+            {
+                name: "arms",
                 primaryStat: "strength",
                 usableWeapons: ["two-handed axe", "two-handed mace", "two-handed sword", "polearm"],
                 role: "dps",
                 weaponSlots: [["both hands"]],
             },
-            protection: {
+            {
+                name: "protection",
                 primaryStat: "strength",
                 usableWeapons: ["one-handed axe", "one-handed mace", "one-handed sword", "shield"],
                 role: "tank",
                 weaponSlots: [["one hand", "off hand"]],
             },
-        },
+        ],
     },
-    paladin: {
+    {
+        name: "paladin",
         usableArmor: "plate",
-        specializations: {
-            holy: {
+        specializations: [
+            {
+                name: "holy",
                 primaryStat: "intellect",
                 usableWeapons: ["one-handed axe", "one-handed mace", "one-handed sword", "shield"],
                 role: "healer",
                 weaponSlots: [["one hand", "off hand"]],
             },
-            protection: {
+            {
+                name: "protection",
                 primaryStat: "strength",
                 usableWeapons: ["one-handed axe", "one-handed mace", "one-handed sword", "shield"],
                 role: "tank",
                 weaponSlots: [["one hand", "off hand"]],
             },
-            retribution: {
+            {
+                name: "retribution",
                 primaryStat: "strength",
                 usableWeapons: ["two-handed axe", "two-handed mace", "two-handed sword"],
                 role: "dps",
                 weaponSlots: [["both hands"]],
             },
-        },
+        ],
     },
-    hunter: {
+    {
+        name: "hunter",
         usableArmor: "mail",
-        specializations: {
-            marksmanship: {
+        specializations: [
+            {
+                name: "marksmanship",
                 primaryStat: "agility",
                 usableWeapons: ["ranged"],
                 role: "dps",
                 weaponSlots: [["both hands"]],
             },
-            "beast mastery": {
+            {
+                name: "beast mastery",
                 primaryStat: "agility",
                 usableWeapons: ["ranged"],
                 role: "dps",
                 weaponSlots: [["both hands"]],
             },
-            survival: {
+            {
+                name: "survival",
                 primaryStat: "agility",
                 usableWeapons: ["polearm"],
                 role: "dps",
                 weaponSlots: [["both hands"]],
             },
-        },
+        ],
     },
-    rogue: {
+    {
+        name: "rogue",
         usableArmor: "leather",
-        specializations: {
-            sublety: {
+        specializations: [
+            {
+                name: "sublety",
                 primaryStat: "agility",
                 usableWeapons: ["dagger"],
                 role: "dps",
                 weaponSlots: [["one hand", "one hand"]],
             },
-            assassination: {
+            {
+                name: "assassination",
                 primaryStat: "agility",
                 usableWeapons: ["dagger"],
                 role: "dps",
                 weaponSlots: [["one hand", "one hand"]],
             },
-            outlaw: {
+            {
+                name: "outlaw",
                 primaryStat: "agility",
                 usableWeapons: ["one-handed sword", "one-handed axe", "one-handed mace"],
                 role: "dps",
                 weaponSlots: [["one hand", "one hand"]],
             },
-        },
+        ],
     },
-    priest: {
+    {
+        name: "priest",
         usableArmor: "cloth",
-        specializations: {
-            holy: {
+        specializations: [
+            {
+                name: "holy",
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed mace", "staff", "wand", "off-hand"],
                 role: "healer",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            discipline: {
+            {
+                name: "discipline",
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed mace", "staff", "wand", "off-hand"],
                 role: "healer",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            shadow: {
+            {
+                name: "shadow",
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed mace", "staff", "wand", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-        },
+        ],
     },
-    shaman: {
+    {
+        name: "shaman",
         usableArmor: "mail",
-        specializations: {
-            restoration: {
+        specializations: [
+            {
+                name: "restoration",
                 primaryStat: "intellect",
                 usableWeapons: ["fist weapon", "one-handed axe", "one-handed mace", "shield", "staff"],
                 role: "healer",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            enhancement: {
+            {
+                name: "enhancement",
                 primaryStat: "agility",
                 usableWeapons: ["fist weapon", "one-handed axe", "one-handed mace"],
                 role: "dps",
                 weaponSlots: [["one hand", "one hand"]],
             },
-            elemental: {
+            {
+                name: "elemental",
                 primaryStat: "intellect",
                 usableWeapons: ["fist weapon", "one-handed axe", "one-handed mace", "shield", "staff"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-        },
+        ],
     },
-    mage: {
+    {
+        name: "mage",
         usableArmor: "cloth",
-        specializations: {
-            fire: {
+        specializations: [
+            {
+                name: "fire",
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed sword", "staff", "wand", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            frost: {
+            {
+                name: "frost",
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed sword", "staff", "wand", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            arcane: {
+            {
+                name: "arcane",
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed sword", "staff", "wand", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-        },
+        ],
     },
-    warlock: {
+    {
+        name: "warlock",
         usableArmor: "cloth",
-        specializations: {
-            affliction: {
+        specializations: [
+            {
+                name: "affliction",
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed sword", "staff", "wand", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            destruction: {
+            {
+                name: "destruction",
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed sword", "staff", "wand", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            demonology: {
+            {
+                name: "demonology",
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "one-handed sword", "staff", "wand", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-        },
+        ],
     },
-    monk: {
+    {
+        name: "monk",
         usableArmor: "leather",
-        specializations: {
-            brewmaster: {
+        specializations: [
+            {
+                name: "brewmaster",
                 primaryStat: "agility",
                 usableWeapons: ["fist weapon", "one-handed axe", "one-handed mace", "one-handed sword", "polearm", "staff"],
                 role: "tank",
                 weaponSlots: [["one hand", "one hand"], ["both hands"]],
             },
-            windwalker: {
+            {
+                name: "windwalker",
                 primaryStat: "agility",
                 usableWeapons: ["fist weapon", "one-handed axe", "one-handed mace", "one-handed sword", "polearm", "staff"],
                 role: "dps",
                 weaponSlots: [["one hand", "one hand"], ["both hands"]],
             },
-            mistweaver: {
+            {
+                name: "mistweaver",
                 primaryStat: "intellect",
                 usableWeapons: ["fist weapon", "one-handed axe", "one-handed mace", "one-handed sword", "polearm", "staff"],
                 role: "healer",
                 weaponSlots: [["one hand", "one hand"], ["both hands"]],
             },
-        },
+        ],
     },
-    druid: {
+    {
+        name: "druid",
         usableArmor: "leather",
-        specializations: {
-            restoration: {
+        specializations: [
+            {
+                name: "restoration",
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "fist weapon", "one-handed mace", "two-handed mace", "staff", "off-hand"],
                 role: "healer",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            guardian: {
+            {
+                name: "guardian",
                 primaryStat: "agility",
                 usableWeapons: ["dagger", "fist weapon", "one-handed mace", "two-handed mace", "staff", "off-hand"],
                 role: "tank",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            feral: {
+            {
+                name: "feral",
                 primaryStat: "agility",
                 usableWeapons: ["dagger", "fist weapon", "one-handed mace", "two-handed mace", "staff", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-            balance: {
+            {
+                name: "balance",
                 primaryStat: "intellect",
                 usableWeapons: ["dagger", "fist weapon", "one-handed mace", "two-handed mace", "staff", "off-hand"],
                 role: "dps",
                 weaponSlots: [["one hand", "off hand"], ["both hands"]],
             },
-        },
+        ],
     },
-    "demon hunter": {
+    {
+        name: "demon hunter",
         usableArmor: "leather",
-        specializations: {
-            havoc: {
+        specializations: [
+            {
+                name: "havoc",
                 primaryStat: "agility",
                 usableWeapons: ["warglaive", "fist weapon", "one-handed axe", "one-handed sword"],
                 role: "dps",
                 weaponSlots: [["one hand", "one hand"]],
             },
-            vengeance: {
+            {
+                name: "vengeance",
                 primaryStat: "agility",
                 usableWeapons: ["warglaive", "fist weapon", "one-handed axe", "one-handed sword"],
                 role: "tank",
                 weaponSlots: [["one hand", "one hand"]],
             },
-        },
+        ],
     },
-    "death knight": {
+    {
+        name: "death knight",
         usableArmor: "plate",
-        specializations: {
-            blood: {
+        specializations: [
+            {
+                name: "blood",
                 primaryStat: "strength",
                 usableWeapons: ["polearm", "two-handed axe", "two-handed mace", "two-handed sword"],
                 role: "tank",
                 weaponSlots: [["both hands"]],
             },
-            unholy: {
+            {
+                name: "unholy",
                 primaryStat: "strength",
                 usableWeapons: ["polearm", "two-handed axe", "two-handed mace", "two-handed sword"],
                 role: "dps",
                 weaponSlots: [["both hands"]],
             },
-            frost: {
+            {
+                name: "frost",
                 primaryStat: "strength",
                 usableWeapons: ["one-handed axe", "one-handed mace", "one-handed sword", "polearm", "two-handed axe", "two-handed mace", "two-handed sword"],
                 role: "dps",
                 weaponSlots: [["one hand", "one hand"], ["both hands"]],
             },
-        },
+        ],
     },
-};
+];

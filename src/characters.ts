@@ -1,8 +1,12 @@
 class Character {
+    public readonly wowClass: WowClass;
+    public readonly spec: Specialization;
+
     constructor(
-        private readonly wowClass: WowClass,
-        private readonly spec: Specialization,
-        private readonly items: {
+        public readonly name: string,
+        wowClassName: WowClassName,
+        specName: string,
+        public readonly items: {
             head: ArmorItemWithIlvl;
             neck: JewelryItemWithIlvl;
             shoulder: ArmorItemWithIlvl;
@@ -17,14 +21,67 @@ class Character {
             trinket: [TrinketItemWithIlvl, TrinketItemWithIlvl];
             weapon: WeaponItemWithIlvl[];
         },
-    ) {}
+    ) {
+        const possibleClass = classes.find((thisClass) => thisClass.name === wowClassName);
+        if (!possibleClass) {
+            throw new Error(`Undefined class: ${wowClassName}`);
+        }
+        this.wowClass = possibleClass;
+
+        const possibleSpec = this.wowClass.specializations.find((spec) => spec.name === specName);
+        if (!possibleSpec) {
+            throw new Error(`Undefined spec: ${specName}`);
+        }
+        this.spec = possibleSpec;
+    }
 
     public getIlvl() {
-        return Object.values(this.items);
+        const allIlvls = Object.values(this.items)
+            .flat()
+            .map((item) => item.ilvl);
+
+        if (this.items.weapon.length === 1) {
+            allIlvls.push(allIlvls[allIlvls.length - 1]);
+        }
+
+        const avgIlvl = allIlvls.reduce((prev, curr) => prev + curr, 0) / allIlvls.length;
+
+        return avgIlvl;
+    }
+
+    public canUseItem(item: Item): boolean {
+        switch (item.slot) {
+            case "neck":
+            case "finger":
+            case "back":
+                return true;
+            case "chest":
+            case "feet":
+            case "legs":
+            case "waist":
+            case "wrist":
+            case "hands":
+            case "shoulder":
+            case "head":
+                return item.type === this.wowClass.usableArmor;
+            case "one hand":
+            case "off hand":
+            case "both hands":
+                return item.primaryStat.indexOf(this.spec.primaryStat) !== -1 && this.spec.usableWeapons.indexOf(item.type) !== -1;
+            case "trinket":
+                return (
+                    (typeof item.stat !== "object" || item.stat.indexOf(this.spec.primaryStat) !== -1) &&
+                    (item.effectSuitableFor === "all" ||
+                        (typeof item.effectSuitableFor === "object" && item.effectSuitableFor.indexOf(this.spec.role) !== -1) ||
+                        item.effectSuitableFor === this.spec.primaryStat)
+                );
+            default:
+                throw new Error("Unexpected item in bagging area");
+        }
     }
 }
 
-const anixa = new Character(classes.shaman, classes.shaman.specializations.restoration, {
+const anixa = new Character("Anixa", "shaman", "restoration", {
     head: {
         name: "Nathrian Usurper's Mask",
         slot: "head",
@@ -140,7 +197,7 @@ const anixa = new Character(classes.shaman, classes.shaman.specializations.resto
             name: "Scithewood Scepter",
             slot: "one hand",
             type: "one-handed mace",
-            ilvl: 197,
+            ilvl: 194,
             primaryStat: ["intellect"],
             mainSecondaryStat: "Mastery",
             otherSecondaryStat: "Critical Strike",
@@ -156,3 +213,5 @@ const anixa = new Character(classes.shaman, classes.shaman.specializations.resto
         },
     ],
 });
+
+const characters = [anixa];
