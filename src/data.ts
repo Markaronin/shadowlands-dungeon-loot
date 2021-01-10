@@ -705,135 +705,213 @@ const dungeons: Dungeon[] = [
             },
         ],
     },
-    // {
-    //     name: "Plaguefall",
-    //     bosses: [
-    //         {
-    //             name: "Globgrog",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             name: "Doctor Ickus",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             name: "Domina Venomblade",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             name: "Margrave Stradama",
-    //             loot: [
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //                 {
-    //                     name: "",
-    //                     slot:
-    //                 },
-    //             ],
-    //         },
-    //     ],
-    // },
+    {
+        name: "Plaguefall",
+        bosses: [
+            {
+                name: "Globgrog",
+                loot: [
+                    {
+                        name: "Surgical Pustule Extractor",
+                        slot: "one hand",
+                        type: "dagger",
+                        primaryStat: ["intellect"],
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Digested Interrogator's Gaze",
+                        slot: "head",
+                        type: "leather",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Plage Handler's Greathelm",
+                        slot: "head",
+                        type: "plate",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Blightborne Chain Legguards",
+                        slot: "legs",
+                        type: "mail",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Stradama's Misplaced Slippers",
+                        slot: "feet",
+                        type: "cloth",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Slimy Consumptive Organ",
+                        slot: "trinket",
+                        stat: "Versatility", // Innacurate because it's actually stamina
+                        effectSuitableFor: ["tank"],
+                    },
+                ],
+            },
+            {
+                name: "Doctor Ickus",
+                loot: [
+                    {
+                        name: "Sophisticated Bonecracker",
+                        slot: "one hand",
+                        type: "one-handed mace",
+                        primaryStat: ["strength"],
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Depraved Physician's Mask",
+                        slot: "head",
+                        type: "cloth",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Malodorous Gristle-Sown Spaulders",
+                        slot: "shoulder",
+                        type: "leather",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Tortured Assisstant's Bindings",
+                        slot: "wrist",
+                        type: "mail",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Fleshfused Crushers",
+                        slot: "hands",
+                        type: "plate",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Phial of Putrefaction",
+                        slot: "trinket",
+                        stat: ["agility", "strength"],
+                        effectSuitableFor: ["tank", "dps"],
+                    },
+                ],
+            },
+            {
+                name: "Domina Venomblade",
+                loot: [
+                    {
+                        name: "Halverd of the Aranakk",
+                        slot: "both hands",
+                        type: "polearm",
+                        primaryStat: ["agility"],
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Domina's Oozing Shiv",
+                        slot: "one hand",
+                        type: "dagger",
+                        primaryStat: ["agility"],
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Fastened Venombarb Binds",
+                        slot: "wrist",
+                        type: "leather",
+                        mainSecondaryStat: "Mastery",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Mitts of Flawless Duplication",
+                        slot: "hands",
+                        type: "cloth",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Belt of Wretched Manipulations",
+                        slot: "waist",
+                        type: "mail",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Scarred Bloodbound Girdle",
+                        slot: "waist",
+                        type: "plate",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Arachnid Cipher Ring",
+                        slot: "finger",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Haste",
+                    },
+                ],
+            },
+            {
+                name: "Margrave Stradama",
+                loot: [
+                    {
+                        name: "Poxstorm, Longsword of Pestilence",
+                        slot: "one hand",
+                        type: "one-handed sword",
+                        primaryStat: ["agility"],
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Mastery",
+                    },
+                    {
+                        name: "Plagueborne Shoulderguards",
+                        slot: "shoulder",
+                        type: "mail",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Versatility",
+                    },
+                    {
+                        name: "Blighted Margave's Cloak",
+                        slot: "back",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Gloves of Obscure Rituals",
+                        slot: "hands",
+                        type: "leather",
+                        mainSecondaryStat: "Critical Strike",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Leggings of the Erudite Scholar",
+                        slot: "legs",
+                        type: "cloth",
+                        mainSecondaryStat: "Versatility",
+                        otherSecondaryStat: "Haste",
+                    },
+                    {
+                        name: "Muckwallow Stompers",
+                        slot: "feet",
+                        type: "plate",
+                        mainSecondaryStat: "Haste",
+                        otherSecondaryStat: "Critical Strike",
+                    },
+                    {
+                        name: "Infinitely Divisible Ooze",
+                        slot: "trinket",
+                        stat: ["agility", "intellect"],
+                        effectSuitableFor: ["dps"],
+                    },
+                ],
+            },
+        ],
+    },
     // {
     //     name: "Sanguine Depths",
     //     bosses: [
@@ -1737,3 +1815,5 @@ const classes: WowClass[] = [
         ],
     },
 ];
+
+const mythicPlusEndOfDungeonIlvl = [187, 190, 194, 194, 197, 200, 200, 200, 207, 207, 207, 207, 207, 210];
